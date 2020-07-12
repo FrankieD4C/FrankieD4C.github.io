@@ -28,7 +28,7 @@
 <meta property="og:description" content="Problem Descriptionhttps:&#x2F;&#x2F;leetcode.com&#x2F;problems&#x2F;reverse-integer&#x2F; My solution12345678910111213class Solution &amp;#123;    public int reverse(int x) &amp;#123;        int rev &#x3D; 0;        while (x !&#x3D; 0) &amp;#123;">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-07-12T08:14:05.000Z">
-<meta property="article:modified_time" content="2020-07-12T08:32:20.993Z">
+<meta property="article:modified_time" content="2020-07-12T09:35:47.839Z">
 <meta property="article:author" content="Koyomi">
 <meta property="article:tag" content="LCEasy">
 <meta property="article:tag" content="Math">
@@ -337,7 +337,7 @@ mjx-container[display="true"] + br {
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2020-07-12 16:14:05 / Modified: 16:32:20" itemprop="dateCreated datePublished" datetime="2020-07-12T16:14:05+08:00">2020-07-12</time>
+              <time title="Created: 2020-07-12 16:14:05 / Modified: 17:35:47" itemprop="dateCreated datePublished" datetime="2020-07-12T16:14:05+08:00">2020-07-12</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -364,7 +364,8 @@ mjx-container[display="true"] + br {
 <h3 id="My-solution"><a href="#My-solution" class="headerlink" title="My solution"></a>My solution</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">reverse</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> rev = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (x != <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">int</span> pop = x % <span class="number">10</span>;</span><br><span class="line">            x /= <span class="number">10</span>;</span><br><span class="line">            <span class="keyword">if</span> (rev &gt; Integer.MAX_VALUE/<span class="number">10</span> || (rev == Integer.MAX_VALUE / <span class="number">10</span> &amp;&amp; pop &gt; <span class="number">7</span>)) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">if</span> (rev &lt; Integer.MIN_VALUE/<span class="number">10</span> || (rev == Integer.MIN_VALUE / <span class="number">10</span> &amp;&amp; pop &lt; -<span class="number">8</span>)) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">            rev = rev * <span class="number">10</span> + pop;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> rev;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="Key-Points"><a href="#Key-Points" class="headerlink" title="Key Points"></a>Key Points</h3><ul>
-<li><p>Modulo operation requires that <code>(a/b) * b + a%b</code> shall equal <code>a</code>. Ex: <code>-5 % 3 = -2</code>, <code>-5 % -3 = -2</code></p>
+<li><p>Modulo operation requires that <code>(a/b) * b + a%b</code> shall equal <code>a</code>. </p>
+<p>Ex: <code>-5 % 3 = -2</code>, <code>-5 % -3 = -2</code></p>
 </li>
 <li><p>Check whether <code>rev</code> will overflow before every multiplication.</p>
 </li>
