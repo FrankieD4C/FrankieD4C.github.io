@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>LC2 Add Two Numbers</title>
+    <url>/2020/07/11/LC2/</url>
+    <content><![CDATA[<h3 id="Problem-Description"><a href="#Problem-Description" class="headerlink" title="Problem Description"></a>Problem Description</h3><p><a href="https://leetcode.com/problems/add-two-numbers/" target="_blank" rel="noopener">https://leetcode.com/problems/add-two-numbers/</a></p>
+<h3 id="My-solution"><a href="#My-solution" class="headerlink" title="My solution"></a>My solution</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * public class ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode next;</span></span><br><span class="line"><span class="comment"> *     ListNode() &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int val) &#123; this.val = val; &#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int val, ListNode next) &#123; this.val = val; this.next = next; &#125;</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ListNode <span class="title">addTwoNumbers</span><span class="params">(ListNode l1, ListNode l2)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (l1 == <span class="keyword">null</span>) <span class="keyword">return</span> l2;</span><br><span class="line">        <span class="keyword">if</span> (l2 == <span class="keyword">null</span>) <span class="keyword">return</span> l1;</span><br><span class="line">        ListNode l1head = l1;</span><br><span class="line">        <span class="keyword">int</span> ci = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> sum = l1.val + l2.val + ci;</span><br><span class="line">        l1.val = sum % <span class="number">10</span>;</span><br><span class="line">        ci = sum / <span class="number">10</span>;</span><br><span class="line">        <span class="keyword">while</span> (l1.next != <span class="keyword">null</span> &amp;&amp; l2.next != <span class="keyword">null</span>) &#123;</span><br><span class="line">            l1 = l1.next;</span><br><span class="line">            l2 = l2.next;</span><br><span class="line">            sum = l1.val + l2.val + ci;</span><br><span class="line">            l1.val = sum % <span class="number">10</span>;</span><br><span class="line">            ci = sum / <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (l1.next == <span class="keyword">null</span>) l1.next = l2.next;</span><br><span class="line">        <span class="keyword">while</span> (l1.next != <span class="keyword">null</span>) &#123;</span><br><span class="line">            l1 = l1.next;</span><br><span class="line">            sum = l1.val + ci;</span><br><span class="line">            l1.val = sum % <span class="number">10</span>;</span><br><span class="line">            ci = sum / <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (ci &gt; <span class="number">0</span>) l1.next = <span class="keyword">new</span> ListNode(ci);</span><br><span class="line">        <span class="keyword">return</span> l1head;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Key-Points"><a href="#Key-Points" class="headerlink" title="Key Points"></a>Key Points</h3><ul>
+<li>It would be simpler if we create a new list as result. (See official solution)</li>
+</ul>
+]]></content>
+      <categories>
+        <category>My LeetCode Notes</category>
+      </categories>
+      <tags>
+        <tag>Linked List</tag>
+        <tag>LCMedium</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Build a blog with Hexo &amp; NexT theme</title>
     <url>/2020/07/10/HowToBuildABlog/</url>
     <content><![CDATA[<p>Recently I built a personal blog w/ Hexo on Github, and selected NexT as its main theme. Here’s some useful information.</p>
@@ -25,24 +43,6 @@
       <tags>
         <tag>Hexo</tag>
         <tag>Frontend</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>LC2 Add Two Numbers</title>
-    <url>/2020/07/11/LC2/</url>
-    <content><![CDATA[<h3 id="Problem-Description"><a href="#Problem-Description" class="headerlink" title="Problem Description"></a>Problem Description</h3><p><a href="https://leetcode.com/problems/add-two-numbers/" target="_blank" rel="noopener">https://leetcode.com/problems/add-two-numbers/</a></p>
-<h3 id="My-solution"><a href="#My-solution" class="headerlink" title="My solution"></a>My solution</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * public class ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode next;</span></span><br><span class="line"><span class="comment"> *     ListNode() &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int val) &#123; this.val = val; &#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int val, ListNode next) &#123; this.val = val; this.next = next; &#125;</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ListNode <span class="title">addTwoNumbers</span><span class="params">(ListNode l1, ListNode l2)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (l1 == <span class="keyword">null</span>) <span class="keyword">return</span> l2;</span><br><span class="line">        <span class="keyword">if</span> (l2 == <span class="keyword">null</span>) <span class="keyword">return</span> l1;</span><br><span class="line">        ListNode l1head = l1;</span><br><span class="line">        <span class="keyword">int</span> ci = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> sum = l1.val + l2.val + ci;</span><br><span class="line">        l1.val = sum % <span class="number">10</span>;</span><br><span class="line">        ci = sum / <span class="number">10</span>;</span><br><span class="line">        <span class="keyword">while</span> (l1.next != <span class="keyword">null</span> &amp;&amp; l2.next != <span class="keyword">null</span>) &#123;</span><br><span class="line">            l1 = l1.next;</span><br><span class="line">            l2 = l2.next;</span><br><span class="line">            sum = l1.val + l2.val + ci;</span><br><span class="line">            l1.val = sum % <span class="number">10</span>;</span><br><span class="line">            ci = sum / <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (l1.next == <span class="keyword">null</span>) l1.next = l2.next;</span><br><span class="line">        <span class="keyword">while</span> (l1.next != <span class="keyword">null</span>) &#123;</span><br><span class="line">            l1 = l1.next;</span><br><span class="line">            sum = l1.val + ci;</span><br><span class="line">            l1.val = sum % <span class="number">10</span>;</span><br><span class="line">            ci = sum / <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (ci &gt; <span class="number">0</span>) l1.next = <span class="keyword">new</span> ListNode(ci);</span><br><span class="line">        <span class="keyword">return</span> l1head;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="Key-Points"><a href="#Key-Points" class="headerlink" title="Key Points"></a>Key Points</h3><ul>
-<li>It would be simpler if we create a new list as result. (See official solution)</li>
-</ul>
-]]></content>
-      <categories>
-        <category>My LeetCode Notes</category>
-      </categories>
-      <tags>
-        <tag>Linked List</tag>
-        <tag>LCMedium</tag>
       </tags>
   </entry>
   <entry>
@@ -127,28 +127,6 @@
       </tags>
   </entry>
   <entry>
-    <title>LC7 Reverse Integer</title>
-    <url>/2020/07/12/LC7/</url>
-    <content><![CDATA[<h3 id="Problem-Description"><a href="#Problem-Description" class="headerlink" title="Problem Description"></a>Problem Description</h3><p><a href="https://leetcode.com/problems/reverse-integer/" target="_blank" rel="noopener">https://leetcode.com/problems/reverse-integer/</a></p>
-<h3 id="My-solution"><a href="#My-solution" class="headerlink" title="My solution"></a>My solution</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">reverse</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> rev = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (x != <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">int</span> pop = x % <span class="number">10</span>;</span><br><span class="line">            x /= <span class="number">10</span>;</span><br><span class="line">            <span class="keyword">if</span> (rev &gt; Integer.MAX_VALUE/<span class="number">10</span> || (rev == Integer.MAX_VALUE / <span class="number">10</span> &amp;&amp; pop &gt; <span class="number">7</span>)) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">if</span> (rev &lt; Integer.MIN_VALUE/<span class="number">10</span> || (rev == Integer.MIN_VALUE / <span class="number">10</span> &amp;&amp; pop &lt; -<span class="number">8</span>)) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">            rev = rev * <span class="number">10</span> + pop;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> rev;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="Key-Points"><a href="#Key-Points" class="headerlink" title="Key Points"></a>Key Points</h3><ul>
-<li><p>Modulo operation requires that <code>(a/b) * b + a%b</code> shall equal <code>a</code>. </p>
-<p>Ex: <code>-5 % 3 = -2</code>, <code>-5 % -3 = -2</code></p>
-</li>
-<li><p>Check whether <code>rev</code> will overflow before every multiplication.</p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>My LeetCode Notes</category>
-      </categories>
-      <tags>
-        <tag>LCEasy</tag>
-        <tag>Math</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hello World</title>
     <url>/2020/06/30/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
@@ -170,6 +148,28 @@
       </categories>
       <tags>
         <tag>Testing</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LC7 Reverse Integer</title>
+    <url>/2020/07/12/LC7/</url>
+    <content><![CDATA[<h3 id="Problem-Description"><a href="#Problem-Description" class="headerlink" title="Problem Description"></a>Problem Description</h3><p><a href="https://leetcode.com/problems/reverse-integer/" target="_blank" rel="noopener">https://leetcode.com/problems/reverse-integer/</a></p>
+<h3 id="My-solution"><a href="#My-solution" class="headerlink" title="My solution"></a>My solution</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">reverse</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> rev = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (x != <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">int</span> pop = x % <span class="number">10</span>;</span><br><span class="line">            x /= <span class="number">10</span>;</span><br><span class="line">            <span class="keyword">if</span> (rev &gt; Integer.MAX_VALUE/<span class="number">10</span> || (rev == Integer.MAX_VALUE / <span class="number">10</span> &amp;&amp; pop &gt; <span class="number">7</span>)) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">if</span> (rev &lt; Integer.MIN_VALUE/<span class="number">10</span> || (rev == Integer.MIN_VALUE / <span class="number">10</span> &amp;&amp; pop &lt; -<span class="number">8</span>)) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">            rev = rev * <span class="number">10</span> + pop;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> rev;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Key-Points"><a href="#Key-Points" class="headerlink" title="Key Points"></a>Key Points</h3><ul>
+<li><p>Modulo operation requires that <code>(a/b) * b + a%b</code> shall equal <code>a</code>. </p>
+<p>Ex: <code>-5 % 3 = -2</code>, <code>-5 % -3 = -2</code></p>
+</li>
+<li><p>Check whether <code>rev</code> will overflow before every multiplication.</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>My LeetCode Notes</category>
+      </categories>
+      <tags>
+        <tag>LCEasy</tag>
+        <tag>Math</tag>
       </tags>
   </entry>
 </search>
